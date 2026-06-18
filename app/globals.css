@@ -1,16 +1,19 @@
 @import "tailwindcss";
 
 @theme {
-  --color-paper: #f4eee2;
-  --color-paper-2: #ece2d2;
-  --color-paper-3: #e3d7c2;
-  --color-ink: #1c1714;
-  --color-ink-soft: #6a5f52;
-  --color-accent: #cb3a1e;
-  --color-accent-deep: #9a2c13;
-  --color-confident: #3a6450;
-  --color-line: rgba(28, 23, 20, 0.16);
-  --color-line-strong: rgba(28, 23, 20, 0.36);
+  /* Warm dark editorial palette. paper = base bg; paper-2/3 are *lighter*
+     elevated surfaces. ink = warm off-white text. accent-deep is a light
+     coral (its dominant use is link/label text on dark). */
+  --color-paper: #15120d;
+  --color-paper-2: #1e1913;
+  --color-paper-3: #2a2219;
+  --color-ink: #efe7d8;
+  --color-ink-soft: #a89b87;
+  --color-accent: #f05a30;
+  --color-accent-deep: #f0936a;
+  --color-confident: #5fb78c;
+  --color-line: rgba(239, 231, 216, 0.14);
+  --color-line-strong: rgba(239, 231, 216, 0.3);
 
   --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
   --font-body: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
@@ -20,6 +23,7 @@
 @layer base {
   html {
     -webkit-font-smoothing: antialiased;
+    color-scheme: dark;
   }
   body {
     font-family: var(--font-body);
@@ -36,8 +40,8 @@
     inset: 0;
     z-index: 60;
     pointer-events: none;
-    opacity: 0.05;
-    mix-blend-mode: multiply;
+    opacity: 0.04;
+    mix-blend-mode: screen;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
   /* Thin editorial scrollbars */
@@ -144,8 +148,8 @@
     border-radius: 4px;
   }
   .answer-prose pre {
-    background: var(--color-ink);
-    color: var(--color-paper);
+    background: #0e0c08;
+    color: var(--color-ink);
     padding: 0.9em 1em;
     border-radius: 8px;
     overflow-x: auto;
